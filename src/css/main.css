@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+a {
+    color: #921eff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: #1561ad;
+}
+
+nav {
+    background-color: #222;
+    padding: 10px;
+    user-select: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li.date {
+    margin-left: auto;
+    color: #888;
+}
+
+
+section {
+    padding: 20px;
+    display: none !important;
+}
+
+section.active {
+    display: block !important;
+}
+
+section h1 {
+    user-select: none;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: 100;
+    color: #921eff;
+}
+/* make total users element to right */
+section h1 .total-users {
+    float: right;
+    font-size: 1.2em;
+    color: #888;
+}
+
+section.blacklist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section.blacklist .blacklist-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+section.blacklist .blacklist-container .blacklist-item {
+    padding: 10px;
+    background-color: #333;
+    user-select: none;
+    cursor: pointer;
+}
+
+section.blacklist .blacklist-container .blacklist-item:hover {
+    background-color: #444;
+}
+
+section.blacklist .blacklist-container .blacklist-item .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+section.blacklist .blacklist-container .blacklist-item .actions .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+section.blacklist .blacklist-container .blacklist-item .actions .info .blacklist-id {
+    font-weight: 100;
+    color: #921eff;
+}
+
+section.blacklist .blacklist-container .blacklist-item .collapse {
+    display: none;
+    margin-top: 2vw;
+    background-color: #111;
+    padding: 10px;
+    user-select: auto;
+}
+
+section.blacklist .blacklist-container .blacklist-item .collapse.active {
+    display: block;
+}
+
+section.blacklist .blacklist-container .blacklist-item .collapse .id {
+    font-weight: 100;
+    color: #921eff;
+}
+
+section.blacklist .blacklist-container .blacklist-item button {
+    background-color: #7e1212;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+section.blacklist .search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+section.blacklist .search input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+}
+
+section.blacklist .search button {
+    padding: 10px 20px;
+    background-color: #921eff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section.blacklist .add-new-user-container {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+
+    position: fixed;
+    background-color: #22222285;
+    width: 80%;
+    height: 90%;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-55%) translateX(-50%);
+    padding: 15px;
+    backdrop-filter: blur(5px);
+}
+
+section.blacklist .add-new-user-container.active {
+    display: flex;
+}
+
+section.blacklist .add-new-user-container h2 {
+    font-size: 1.5em;
+    color: #921eff;
+    margin-bottom: 10px;
+}
+
+section.blacklist .add-new-user-container #addUserForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section.blacklist .add-new-user-container #addUserForm input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+}
+
+section.blacklist .add-new-user-container #addUserForm button {
+    padding: 10px 20px;
+    background-color: #921eff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section.blacklist .add-new-user-container #addUserForm textarea {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+    resize: vertical;
+}
+
+
+section.logs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section.logs .logs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+section.logs .logs-container .log-item {
+    padding: 10px;
+    background-color: #333;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+section.logs .logs-container .log-item .log-date {
+    color: #888;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid #555;
+}
+
+
+section.logs .logs-container .log-item .log-message {
+    flex-grow: 1;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+section.logs .logs-container .log-item .log-type {
+    font-weight: 100;
+    color: #921eff;
+}
+
+section.logs .logs-container .log-item .log-type.error {
+    color: #ff6347;
+}
+
+section.logs .logs-container .log-item .log-type.warning {
+    color: #ffa500;
+}
+
+section.logs .logs-container .log-item .log-type.success {
+    color: #32cd32;
+}
+
+section.dev {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+section.dev .console-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+section.dev .console-container .console-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    user-select: none;
+}
+
+section.dev .console-container .console-header .console-title {
+    font-size: 1.2em;
+    color: #921eff;
+}
+
+section.dev .console-container .console-output {
+    padding: 10px;
+    background-color: #222;
+    color: #fff;
+    overflow-y: auto;
+    flex-grow: 1;
+    height: 550px;
+    overflow-y: auto;
+    max-height: 550px;
+}
+
+section.dev .console-container .console-output pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+section.dev .console-container input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+    outline: none;
+}

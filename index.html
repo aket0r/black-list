@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/main.css">
+    <title>Blacklist</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#dashboard" data-location="dashboard">Dashboard</a></li>
+            <li><a href="#logs" data-location="logs">Logs</a></li>
+            <li><a href="#dev" data-location="dev">Dev</a></li>
+            <li class="date"><span class="loggedin"></span></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="blacklist dashboard active">
+            <h1>Blacklist <span class="total-users" title="total users">0</span></h1>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Search by name or ID...">
+                <button id="searchButton">Search</button>
+                <button id="add">Add</button>
+            </div>
+
+            <div class="add-new-user-container">
+                <h2>Add New User</h2>
+                <div id="addUserForm">
+                    <label for="username">Name:</label>
+                    <input type="text" id="username" name="username">
+                    
+                    <label for="id">ID:</label>
+                    <input type="text" id="id" name="id">
+                    
+                    <label for="reason">Reason:</label>
+                    <textarea id="reason" name="reason" placeholder=""></textarea>
+
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" placeholder=""></textarea>
+                    
+                    <button type="submit" class="confirm-new-user">Add User</button>
+                </div>
+            </div>
+
+            <div class="blacklist-container"></div>
+        </section>
+
+        <section class="logs">
+            <h1>Logs</h1>
+            <div class="logs-container"></div>
+        </section>
+
+        <section class="dev">
+            <div class="console-container">
+                <div class="console-header">
+                    <span class="console-title">Console</span>
+                </div>
+                <div class="console-output">
+                    <pre>Welcome to the console!</pre>
+                    <pre>Type 'help' for a list of commands.</pre>
+                </div>
+                <input type="text" class="console-input" placeholder="Type a command...">
+            </div>
+                
+        </section>
+    </main>
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/animation.js"></script>
+    <script src="./src/js/initial.js"></script>
+    <script src="./src/js/user.js"></script>
+</body>
+</html>
